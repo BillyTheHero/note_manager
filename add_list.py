@@ -13,10 +13,11 @@ temp_issue_date = input("Дата дэдлайна в формате дд.мм.�
 formatted_issue_date = datetime.strptime(temp_issue_date, "%d.%m.%Y")
 issue_date = datetime.strftime(formatted_issue_date, "%d.%m")
 
-title1 = input("Введите первый заголовок заметки: ")
-title2 = input("Введите второй заголовок заметки: ")
-title3 = input("Введите третий заголовок заметки: ")
-titles = [title1, title2, title3]
+titles = []
+for i in range(3):
+    title = input(f"Введите заголовок заметки {i + 1}: ")
+    titles.append(title)
+
 
 print("\nВы ввели следующие данные:")
 print("Имя пользователя", username)

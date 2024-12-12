@@ -1,13 +1,13 @@
 from datetime import datetime
 temp_created_date = datetime.today()
 
-username = input("Введите имя пользователя - ")
+username = input("Введите имя пользователя: ")
 
 title = input("Заголовок\n")
 
-content = input("Текст\n")
+content = input("Введите описание заметки: \n")
 
-status = input("Статус - ")
+status = input("Введите статус заметки (например, 'Активна', 'Выполнена'): ")
 
 created_date = datetime.strftime(temp_created_date, "%d.%m")
 
