@@ -15,10 +15,10 @@ temp_issue_date = input("Дата дэдлайна в формате дд.мм.�
 formatted_issue_date = datetime.strptime(temp_issue_date, "%d.%m.%Y")
 note ["issue_date"] = datetime.strftime(formatted_issue_date, "%d.%m")
 
-titles = []
+titles = {}
 for i in range(3):
     title = input(f"Введите заголовок заметки {i + 1}: ")
-    titles.append(title)
+    titles[f"title_{i + 1}"] = title 
 
 print("\nСобранная информация о заметке:")
 for key, value in note.items():
