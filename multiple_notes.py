@@ -49,17 +49,6 @@ def viewing():
         print(f"ID: {note['id']}, Пользователь: {note['username']}, Описание: {note['content']}")
 
 
-# Функция выхода в меню
-def exit_to_menu():
-    while True:
-        exit = input("Желаете ли вы выйти в меню? д/н").lower()
-        if exit == "н":
-            break
-        elif exit == "д":
-            print("1")
-        else:
-            break
-
 def created_note():
     note = {}
     note["username"] = input("Введите имя пользователя: ")
