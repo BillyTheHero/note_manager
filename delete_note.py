@@ -147,13 +147,20 @@ def created_note():
 def delete_note():
     try:
         viewing()
-        note_id = int(input("Введите id заметки для ее удаления: "))
-        note_to_delete = next(note for note in notes if note["id"] == note_id)
-        notes.remove(note_to_delete)
-        print(f"Заметка с ID {note_id} удалена.")
+        del_method = input("Выберете метод удаления по ключевому слову или id: 1 - слово/2 - id: ")
+        if del_method == "1":
+            note_keyword = input("Введите ключевое слово заметки для ее удаления: ")
+            note_to_delete = next(note for note in notes if note["username"] or note["content"] == note_keyword)
+            notes.remove(note_to_delete)
+            print(f"Заметка с ID {note_keyword} удалена.")
+        elif del_method == "2":
+            note_id = int(input("Введите id заметки для ее удаления: "))
+            note_to_delete = next(note for note in notes if note["id"] == note_id)
+            notes.remove(note_to_delete)
+            print(f"Заметка с ID {note_id} удалена.")
 
     except StopIteration:
-        print(f"Заметка с ID {note_id} не найдена.")
+        print(f"Заметка не найдена.")
     except ValueError:
         print("Вы ввели некорректный ID. Введите число.")
 
